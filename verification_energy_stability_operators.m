@@ -1,9 +1,11 @@
 clear;
 %% This script verifies the positivity of the energy stability 
-% operators obtained by first to third order ERK schemes
-% Reference: Haifeng Wang, Hong Zhang, Jingwei Sun, Lingyan Tang, Global-in-time 
+% operators and order conditions obtained by first to third order ERK schemes
+% Reference: [1] Haifeng Wang, Hong Zhang, Jingwei Sun, Lingyan Tang, Global-in-time 
 % energy estimate of a third-order exponential Runge--Kutta framework 
 % for the phase field crystal equation
+% [2] H. Zhang, X. Qian, S. Song, Third-order accurate, large time-stepping and maximum-principle-preserving schemes for the
+% Allen-Cahn equation, Numerical Algorithms (2023) 1â€“38.
 
 syms z un un1 un2 un3
 ERK_opt = 33; % Switch ERK schemes
@@ -43,8 +45,6 @@ switch stage
 end
 
 %% Verification of order conditions 
-% Ref: H. Zhang, X. Qian, J. Xia, S. Song, Efficient inequality-preserving integrators for differential equations satisfying forward Euler
-% conditions, ESAIM: Mathematical Modelling and Numerical Analysis 57 (3) (2023) 1619¨C1655.
 if stage > 0
     hata10 = a10;
     hatb = hata10;
